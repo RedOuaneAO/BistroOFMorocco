@@ -39,7 +39,6 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                   {{-- <h2 class="text-white">Bistro Of Morocco</h2> --}}
                     <img src="img/logo.png" class="rounded-circle mt-1 " alt="..." style="width: 50px;">
                     <p class="mt-3 ms-3 text-white">BISTRO OF MOROCCO</p>
                 </div>

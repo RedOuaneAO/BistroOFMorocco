@@ -16,9 +16,10 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        // if(!){
+        // if(auth()->tableName()->columnName== something){
 
-        // }
+		// 	//your code here
+		// }
         return $next($request);
     }
 }

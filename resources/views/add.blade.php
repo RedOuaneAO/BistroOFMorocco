@@ -47,28 +47,28 @@
                  <label  class="form-label text-white">Plate Name</label>
                  <input type="text" name="name" class="form-control">
                  @error('name')
-                    <div class="alert alert-danger mt-2">{{ $message }}</div>
+                    <div class="text-danger mt-2">{{ $message }}</div>
                  @enderror
                </div>
                <div class="mb-3">
                  <label  class="form-label text-white">Price</label>
                  <input type="number" name="price" class="form-control" >
                  @error('price')
-                 <div class="alert alert-danger mt-2">{{ $message }}</div>
+                 <div class="text-danger mt-2">{{ $message }}</div>
                  @enderror
                </div>
                <div class="mb-3">
                  <label  class="form-label text-white">Description</label>
                  <textarea class="form-control" name="description"></textarea>
                  @error('description')
-                 <div class="alert alert-danger mt-2">{{ $message }}</div>
+                 <div class="text-danger mt-2">{{ $message }}</div>
                  @enderror
                </div>
                <div class="mb-3">
                  <label class="form-label text-white">Image</label>
                  <input type="file" name="image" class="form-control">
                  @error('image')
-                 <div class="alert alert-danger mt-2">{{ $message }}</div>
+                 <div class="text-danger mt-2">{{ $message }}</div>
                   @enderror
                </div>
                <button type="submit" class="btn btn-primary">Submit</button>

@@ -16,7 +16,17 @@
         </div>
         <a href="{{route('add')}}" class="btn bg-info ms-4 mt-3" >ADD</a>
         <div class="container-fluid row">
-        <div class="table-responsive mt-3 tb rounded col-9">
+            <div class="table-responsive mt-3 tb rounded col-9">
+            @if ($message = Session::get('success')) 
+                <div class="alert alert-success">
+                    <p class="m-0">{{ $message }}</p>
+                </div>
+                @endif
+                @if ($message = Session::get('delete'))
+                    <div class="alert alert-danger">
+                        <p class="m-0">{{ $message }}</p>
+                    </div>
+                 @endif
             <table class="table table-dark table-striped table-bordered"  id="tableId" >
                 <thead class="">
                     <tr>

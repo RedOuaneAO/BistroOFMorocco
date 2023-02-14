@@ -10,7 +10,7 @@ class PlateController extends Controller
     //
     public function addPlates(){
         request()->validate([
-            'name' => 'required',
+            'name' => 'required|string|unique:plates',
             'price' => 'required',
             'description' => 'required|min:20',
             'image' => 'required|image',
@@ -26,7 +26,7 @@ class PlateController extends Controller
         request()->file('image')->move(public_path('img'), $imgName);
         $data->image=$imgName;
         $data->save();
-        return redirect('/dashboard');       
+        return redirect('/dashboard')->with('success','Chehiwa Tzadet N3ama a Sidi.');       
     }
     // public function addPlates(){
     //     plate::create(
@@ -49,7 +49,7 @@ class PlateController extends Controller
     public function deletePlate($id){
         $data =plate::find($id);
         $data->delete();
-        return redirect('/dashboard');       
+        return redirect('/dashboard')->with('delete','Chehiwa Tmshat N3ama a Sidi.');       
     }
 
     public function editPlate($id){
@@ -59,9 +59,15 @@ class PlateController extends Controller
     }
 
     public function updatePlate($id){
-        $data=plate::find($id);
-        $data->update(request()->all());
-        return redirect('/dashboard');       
+        $data = plate::find($id);
+        if (request()->hasFile('image')) {
+            $imgName = request()->file('image')->getClientOriginalName();
+            request()->image->move(public_path('img'), $imgName);
+            $data->image = $imgName;
+            $data->update();
+        }
+        $data->update(request()->except('image'));
+        return redirect('/dashboard')->with('success','Chehiwa Tbdlat N3ama a Sidi.');
     }
    
 }

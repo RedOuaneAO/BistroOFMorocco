@@ -21,18 +21,7 @@
 <!-- ================== END core-css ================== -->
 </head>
 <body>
-    {{-- <div class="mt-4 d-flex align-items-center justify-content-between">
-        <div>
-            <h2>logo</h2>
-        </div>
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-
-            <button type="submit" class="btn me-3">
-                {{ __('Log Out') }}
-            </button>
-        </form>
-    </div> --}}
+  
     @include('layouts.navigation')
 
     <div class="container-fluid">
@@ -46,7 +35,9 @@
                             <h5 class="card-title">{{$item->name}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{$item->price}}</h6>
                             <p class="card-text">{{$item->description}}</p>
-                            <a href="#" class="btn btn-primary">Details</a>
+                            <button type="button" class="btn bg-primary text-white mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Details
+                              </button>
                         </div>
                     </div>
                 @endforeach
@@ -54,7 +45,22 @@
         {{$data->links()}}
     </div>
 
-
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Description</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bg-primary text-white mt-2" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

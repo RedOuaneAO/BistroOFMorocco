@@ -37,7 +37,7 @@
     </div>
     <div class="container-fluid d-flex justify-content-center  mt-3">
        <div class="bg-dark rounded" style="width:500px;">
-           <form action="/{{$data->id}}" method="POST" class="p-5">
+           <form action="/{{$data->id}}" method="POST" class="p-5" enctype="multipart/form-data">
                @csrf
                @method('put')            
                <div class="mb-3 d-flex justify-content-center">
